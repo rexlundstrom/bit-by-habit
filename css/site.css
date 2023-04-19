@@ -1,0 +1,111 @@
+:root {
+  /* fonts */
+  --rex-title-font: "Bebas Neue", sans-serif;
+  --rex-subtitle-font: "Fira Sans", sans-serif;
+  --rex-heading-font: "Bebas Neue", sans-serif;
+  --rex-body-font: "Roboto", sans-serif;
+
+  /* colors */
+  --rex-primary: #d72323;
+  --rex-primary-light: #d7232350;
+  --rex-secondary: #1b1c63;
+  --rex-secondary-light: #1b1c6350;
+  --rex-highlight: #E6D466;
+  --rex-dark: #212121;
+  --rex-light: #F8F7ED;
+  --rex-background: rgba(250, 250, 250, 0.8);
+  --rex-tertiary: #2E539E;
+  --rex-tertiary-transparent: #2e539ede;
+  --rex-quad: #977838;
+  --rex-quad-transparent: #977738de;
+
+
+  /* nav bar colors */
+  --rex-nav-bg: rgba(33, 33, 33, 0.8);
+  --rex-nav-toggler: var(--rex-highlight);
+  --rex-nav-toggler-glow: rgba(250, 225, 120, 0.55);
+
+  /* form colors */
+  --rex-formfocus-border: var(--rex-secondary);
+  --rex-formfocus-shadow: var(--rex-primary);
+  --rex-formfocus-background: var(--rex-light);
+
+  /*  text styles */
+  --rex-title: var(--rex-dark);
+  --rex-font-size: 1.2rem;
+  --rex-font-weight: 400;
+  --rex-line-height: 1.5rem;
+}
+
+/* Sticky Footer */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  font-family: var(--rex-body-font);
+  font-size: var(--rex-font-size);
+  font-weight: var(--rex-font-weight);
+  line-height: var(--rex-line-height);
+  color: var(--rex-dark);
+  background: var(--rex-light);
+}
+
+main {
+  flex-grow: 1;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+.footer-main {
+  background-color: var(--rex-quad-transparent);
+}
+
+.social-icons {
+  font-size: 1.5rem;
+  color: var(--rex-light);
+  transition: color 0.3s ease;
+  padding-left: .5rem; /*probably not needed*/
+}
+
+.social-icons:hover {
+  color: var(--rex-highlight);
+}
+
+/*
+Header 
+*/
+
+#mainNav {
+  background-color: var(--rex-quad-transparent);
+}
+
+/* checklist for app features*/
+
+.checklist {
+    list-style-type: none;
+}
+
+.checklist>li i {
+    color: var(--rex-primary);
+    padding-right: 0.5rem;
+}
+
+.dev-icons {
+    font-size: 3rem;
+    padding-left: .5rem;
+}
+
+#bootstrap-icon {
+    height: 5rem;
+}
+
+.appLogo {
+    max-width: 400px;
+}
