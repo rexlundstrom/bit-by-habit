@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>APP NAME: A Coding Challenge by Rex Lundstrom</title>
+    <title>BIT by HABIT: A Coding Challenge by Rex Lundstrom</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,15 +34,15 @@
     <link rel="stylesheet" href="/css/site.css" />
 
     <!-- favicon (put logo into favicon generator) -->
-    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/img/rex-icon.png" type="image/x-icon" />
   </head>
-  <body>
+  <body onload="buildDropDown()">
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
         <div class="container">
           <a class="navbar-brand" href="/index.html">
             <img src="/img/rex-icon.png" height="40" alt="" />
-            &nbsp; &nbsp; APP NAME
+            &nbsp; &nbsp; BIT by HABIT
           </a>
           <button
             class="navbar-toggler"
@@ -69,17 +69,28 @@
                 <a class="nav-link" href="/code.html">The Code</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" target="_blank" href="https://github.com/rexlundstrom"
+                <a
+                  class="nav-link"
+                  target="_blank"
+                  href="https://github.com/rexlundstrom"
                   >The Repo</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" target="_blank" href="https://rex-portfolio.netlify.app/"
+                <a
+                  class="nav-link"
+                  target="_blank"
+                  href="https://rex-portfolio.netlify.app/"
                   >About</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" target="_blank" href="https://rex-portfolio.netlify.app/#blog">Blog</a>
+                <a
+                  class="nav-link"
+                  target="_blank"
+                  href="https://rex-portfolio.netlify.app/#blog"
+                  >Blog</a
+                >
               </li>
             </ul>
           </div>
@@ -87,19 +98,148 @@
       </nav>
     </header>
 
-    <main class="container mt-3">
-      <h1>App UI GOES HERE</h1>
-      <input type="text" placeholder="Enter a Message" id="message" />
-      <button class="btn btn-primary" id="btnSubmit">Display Message</button>
+    <main class="row pt-3 radial-background">
+      <div class="container col-12 d-flex justify-content-center">
+        <!-- logo -->
+        <img src="/img/bit-by-habit-logo.png" class="img-fluid p-3" alt="" />
+      </div>
+      <div class="container col-10 col-sm-5 col-lg-3 col-xxl-2">
+        <button
+          class="btn btn-custom w-100"
+          data-bs-toggle="modal"
+          data-bs-target="#newHabitModal"
+          data-bs-whatever="@mdo"
+        >
+          Add a New Habit
+        </button>
+        <button
+          class="btn btn-custom dropdown-toggle my-3 w-100"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          View by Category
+        </button>
+        <ul class="dropdown-menu" id="habitDropDown"></ul>
+      </div>
+      <div class="d-flex justify-content-center mb-5">
+        <table class="">
+          <thead class="fs-3">
+            <tr>
+              <th></th>
+              <th>Habit</th>
+              <th>Category</th>
+            </tr>
+          </thead>
+          <tbody id="habitList">
+            <!-- habit data -->
+            <tr class="my-2">
+              <td class="unchecked-item px-2 small my-2">
+                practicing calisthenics
+              </td>
+              <td class="category px-1 small text-center">test</td>
+            </tr>
+            <tr class="my-2">
+              <td class="unchecked-item px-1 small my-2">
+                practicing calisthenics
+              </td>
+              <td class="category px-1 small text-center">test</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </main>
 
-    <footer class="footer-main mt-3">
+    <footer class="footer-main">
       <div class="container">
         <div
           class="py-3 row row-cols-1 row-cols-md-3 align-items-center text-center gy-3"
         >
           <div class="col">
-            <img src="/img/rex-lundstrom-logo.svg" alt="" />
+            <a href="https://rex-portfolio.netlify.app/">
+              <svg
+                width="257.99999999999994"
+                height="68.63054187192117"
+                viewBox="0 0 406 108"
+                class="css-1j8o68f"
+              >
+                <defs id="SvgjsDefs13344"></defs>
+                <g
+                  id="SvgjsG13345"
+                  featurekey="MI9fam-0"
+                  transform="matrix(0.8706467661691543,0,0,0.8706467661691543,0,15)"
+                  fill="#d72323"
+                >
+                  <title xmlns="http://www.w3.org/2000/svg">X Symbols-08</title>
+                  <g
+                    xmlns="http://www.w3.org/2000/svg"
+                    id="Page-1"
+                    stroke="none"
+                    stroke-width="1"
+                    fill="none"
+                    fill-rule="evenodd"
+                  >
+                    <g
+                      id="Artboard"
+                      transform="translate(-2407.000000, -1235.000000)"
+                      fill="#d72323"
+                      fill-rule="nonzero"
+                    >
+                      <g
+                        id="X-Symbols-08"
+                        transform="translate(2407.000000, 1235.000000)"
+                      >
+                        <path
+                          d="M22.3221884,0 L0,22.3561644 L18.6838906,41.0958904 L25.2765957,34.5205479 L13.1306991,22.3561644 L22.3221884,13.1506849 L54.1367781,44.9863014 L48.9665653,50.1643836 L55.5319149,56.739726 L67.2948328,45.0136986 L22.3221884,0 Z M71.2887538,48.9315068 L64.6960486,55.4794521 L76.8693009,67.6712329 L67.6778116,76.8493151 L35.8632219,44.9863014 L41.0334347,39.8082192 L34.4680851,33.2328767 L22.7051672,44.9315068 L22.7325228,44.9863014 L67.6778116,90 L90,67.6438356 L71.2887538,48.9315068 Z M22.3221884,76.8493151 L13.1306991,67.6438356 L25.2765957,55.4794521 L18.7386018,48.8767123 L0,67.6438356 L22.3221884,90 L41.0334347,71.260274 L34.4680851,64.6849315 L22.3221884,76.8493151 Z M90,22.3561644 L67.6778116,0 L48.993921,18.739726 L55.5319149,25.3150685 L67.6778116,13.1506849 L76.8693009,22.3561644 L64.7507599,34.4931507 L71.2887538,41.0684932 L71.2887538,41.0958904 L90,22.3561644 Z"
+                          id="Shape"
+                        ></path>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+                <g
+                  id="SvgjsG13346"
+                  featurekey="textGroupContainer"
+                  transform="matrix(1,0,0,1,405,0)"
+                  fill="#d72323"
+                >
+                  <rect
+                    xmlns="http://www.w3.org/2000/svg"
+                    y="0"
+                    height="1"
+                    width="1"
+                    opacity="0"
+                  ></rect>
+                  <rect
+                    xmlns="http://www.w3.org/2000/svg"
+                    y="0"
+                    x="-307"
+                    width="5"
+                    height="108"
+                  ></rect>
+                </g>
+                <g
+                  id="SvgjsG13347"
+                  featurekey="nameFeature-0"
+                  transform="matrix(1.8177312558256011,0,0,1.8177312558256011,113.92778574429032,13.076176257454254)"
+                  fill="#d72323"
+                >
+                  <path
+                    d="M4.14 10.58 l0 2.92 l2.8 0 c0.92 0 1.46 -0.54 1.46 -1.46 s-0.54 -1.46 -1.46 -1.46 l-2.8 0 z M8.68 15.48 c0.56 0.76 1.12 1.52 1.7 2.26 c0.56 0.74 1.12 1.5 1.68 2.26 l-3.66 0 c-0.72 -0.96 -1.42 -1.92 -2.12 -2.88 c-0.7 -0.94 -1.42 -1.9 -2.14 -2.86 l0 5.74 l-3 0 l0 -12.24 l5.8 0 c2.28 0 4.22 1.74 4.22 4.04 c0 1.62 -1 3.04 -2.48 3.68 z M13.32 7.76 l9.1 0 l0 2.78 l-6.1 0 l0 1.96 l4.9 0 l0 2.78 l-4.9 0 l0 1.94 l6.1 0 l0 2.78 l-9.1 0 l0 -12.24 z M28.880000000000003 16.32 l-2.5 3.68 l-3.5 0 l4.26 -6.26 l-4.06 -5.98 l3.5 0 l2.3 3.4 l2.3 -3.4 l3.5 0 l-4.04 5.98 l4.24 6.26 l-3.5 0 z M49.42 17.22 l0 2.78 l-9.1 0 l0 -12.24 l3 0 l0 9.46 l6.1 0 z M58.379999999999995 7.76 l3 0 l0 7.24 c0 3.18 -2.28 5.1 -5.3 5.1 c-3.1 0 -5.3 -2.04 -5.3 -5.1 l0 -7.24 l3 0 l0 7.24 c0 1.44 0.86 2.32 2.3 2.32 c1.48 0 2.3 -0.86 2.3 -2.32 l0 -7.24 z M71.28 7.76 l3 0 l0 12.24 l-3 0 l-4.8 -7.16 l0 7.16 l-3 0 l0 -12.24 l3 0 l4.8 7.16 l0 -7.16 z M80.88 20 l-4.3 0 l0 -12.24 l4.3 0 c3.74 0 6.3 2.44 6.3 6.12 c0 3.78 -2.7 6.12 -6.3 6.12 z M79.58 10.54 l0 6.68 l1.3 0 c2.12 0 3.3 -1.34 3.3 -3.34 c0 -0.46 -0.06 -0.88 -0.18 -1.3 c-0.52 -1.46 -1.66 -2.04 -3.12 -2.04 l-1.3 0 z M88.44000000000001 19.7 l0 -2.82 c0.24 0.06 0.54 0.12 0.88 0.16 c0.34 0.06 0.7 0.1 1.08 0.12 s0.76 0.04 1.16 0.06 s0.78 0.04 1.12 0.04 c0.94 0 1.6 -0.06 2 -0.16 c0.38 -0.1 0.58 -0.28 0.58 -0.56 c0 -0.24 -0.18 -0.42 -0.36 -0.56 c-0.66 -0.44 -1.44 -0.62 -2.22 -0.8 c-2.2 -0.44 -4.22 -1.32 -4.22 -3.84 c0 -2.98 2.82 -3.68 5.24 -3.68 c1.34 0 2.7 0.14 4 0.46 l0 2.82 c-0.2 -0.06 -0.46 -0.1 -0.78 -0.16 c-0.34 -0.04 -0.68 -0.08 -1.06 -0.12 c-0.78 -0.08 -1.52 -0.12 -2.3 -0.12 c-0.44 0 -1.36 0 -1.78 0.16 c-0.28 0.1 -0.46 0.22 -0.46 0.54 c0 0.16 0.04 0.3 0.12 0.42 c0.08 0.14 0.22 0.24 0.4 0.34 c0.54 0.3 1.24 0.48 1.84 0.62 c0.5 0.12 1 0.26 1.52 0.4 c1.76 0.48 2.92 1.46 2.92 3.34 c0 3.1 -3.08 3.76 -5.56 3.76 c-1.36 0 -2.78 -0.1 -4.12 -0.42 z M99.06 7.76 l10.2 0 l0 2.78 l-3.6 0 l0 9.46 l-3 0 l0 -9.46 l-3.6 0 l0 -2.78 z M113.82000000000001 10.58 l0 2.92 l2.8 0 c0.92 0 1.46 -0.54 1.46 -1.46 s-0.54 -1.46 -1.46 -1.46 l-2.8 0 z M118.36000000000001 15.48 c0.56 0.76 1.12 1.52 1.7 2.26 c0.56 0.74 1.12 1.5 1.68 2.26 l-3.66 0 c-0.72 -0.96 -1.42 -1.92 -2.12 -2.88 c-0.7 -0.94 -1.42 -1.9 -2.14 -2.86 l0 5.74 l-3 0 l0 -12.24 l5.8 0 c2.28 0 4.22 1.74 4.22 4.04 c0 1.62 -1 3.04 -2.48 3.68 z M128.78000000000003 17.32 c2.18 0 3.3 -1.4 3.3 -3.44 c0 -2.16 -1.2 -3.44 -3.3 -3.44 c-2.2 0 -3.3 1.4 -3.3 3.44 c0 2.12 1.22 3.44 3.3 3.44 z M128.78000000000003 20.1 c-3.76 0 -6.3 -2.56 -6.3 -6.22 c0 -3.78 2.66 -6.22 6.3 -6.22 c3.78 0 6.3 2.54 6.3 6.22 c0 3.8 -2.64 6.22 -6.3 6.22 z M139.94 13.26 l0 6.74 l-3 0 l0 -12.24 l3 0 l3.82 6.76 l3.82 -6.76 l3 0 l0 12.24 l-3 0 l0 -6.74 l-2.32 3.98 l-3 0 z"
+                  ></path>
+                </g>
+                <g
+                  id="SvgjsG13348"
+                  featurekey="sloganFeature-0"
+                  transform="matrix(0.73400830982708,0,0,0.73400830982708,115.28067149236693,66.13911647231083)"
+                  fill="#1b1c63"
+                >
+                  <path
+                    d="M12 9.84 l-1.82 0 c-0.1 -2.22 -1.94 -2.92 -3.56 -2.92 c-1.22 0 -3.28 0.34 -3.28 2.52 c0 1.22 0.86 1.62 1.7 1.82 l4.1 0.94 c1.86 0.44 3.26 1.56 3.26 3.84 c0 3.4 -3.16 4.34 -5.62 4.34 c-2.66 0 -3.7 -0.8 -4.34 -1.38 c-1.22 -1.1 -1.46 -2.3 -1.46 -3.64 l1.82 0 c0 2.6 2.12 3.36 3.96 3.36 c1.4 0 3.76 -0.36 3.76 -2.42 c0 -1.5 -0.7 -1.98 -3.06 -2.54 l-2.94 -0.68 c-0.94 -0.22 -3.06 -0.88 -3.06 -3.38 c0 -2.24 1.46 -4.44 4.94 -4.44 c5.02 0 5.52 3 5.6 4.58 z M29.451999999999998 12.82 c0 -3.38 -1.88 -5.84 -5 -5.84 s-5 2.46 -5 5.84 s1.88 5.84 5 5.84 s5 -2.46 5 -5.84 z M31.451999999999998 12.82 c0 3.1 -1.64 7.56 -7 7.56 s-7 -4.46 -7 -7.56 s1.64 -7.56 7 -7.56 s7 4.46 7 7.56 z M39.224000000000004 13.48 l0 6.52 l-1.94 0 l0 -14.36 l9.94 0 l0 1.72 l-8 0 l0 4.4 l7.04 0 l0 1.72 l-7.04 0 z M51.39600000000001 7.359999999999999 l0 -1.72 l11.66 0 l0 1.72 l-4.86 0 l0 12.64 l-1.94 0 l0 -12.64 l-4.86 0 z M76.08800000000001 8.1 l-3.32 11.9 l-2.04 0 l-3.74 -14.36 l2.1 0 l2.68 11.68 l0.04 0 l3.22 -11.68 l2.12 0 l3.22 11.68 l0.04 0 l2.68 -11.68 l2.14 0 l-3.78 14.36 l-2.04 0 l-3.28 -11.9 l-0.04 0 z M98.42000000000002 15.82 l-5.76 0 l-1.5 4.18 l-2 0 l5.4 -14.36 l2.2 0 l5.2 14.36 l-2.12 0 z M93.26 14.1 l4.46 0 l-2.12 -6.32 l-0.04 0 z M109.25200000000001 13.84 l0 6.16 l-1.94 0 l0 -14.36 l6.64 0 c2.36 0 4.72 0.82 4.72 3.86 c0 2.12 -1.08 2.9 -2 3.44 c0.82 0.34 1.64 0.7 1.72 2.7 l0.12 2.6 c0.02 0.8 0.12 1.1 0.72 1.44 l0 0.32 l-2.38 0 c-0.28 -0.88 -0.34 -3.06 -0.34 -3.6 c0 -1.18 -0.24 -2.56 -2.56 -2.56 l-4.7 0 z M109.25200000000001 7.300000000000001 l0 4.88 l4.5 0 c1.42 0 2.92 -0.36 2.92 -2.48 c0 -2.22 -1.62 -2.4 -2.58 -2.4 l-4.84 0 z M135.644 18.28 l0 1.72 l-10.6 0 l0 -14.36 l10.46 0 l0 1.72 l-8.52 0 l0 4.4 l7.86 0 l0 1.72 l-7.86 0 l0 4.8 l8.66 0 z M150.508 20 l0 -14.36 l5.82 0 c3.74 0 6.04 2.84 6.04 6.98 c0 3.22 -1.4 7.38 -6.12 7.38 l-5.74 0 z M152.448 7.300000000000001 l0 11.04 l3.76 0 c2.52 0 4.16 -1.98 4.16 -5.6 s-1.66 -5.44 -4.3 -5.44 l-3.62 0 z M178.98 18.28 l0 1.72 l-10.6 0 l0 -14.36 l10.46 0 l0 1.72 l-8.52 0 l0 4.4 l7.86 0 l0 1.72 l-7.86 0 l0 4.8 l8.66 0 z M190.03199999999998 17.88 l4.06 -12.24 l2.18 0 l-5.24 14.36 l-2.06 0 l-5.24 -14.36 l2.16 0 l4.1 12.24 l0.04 0 z M212.32399999999998 18.28 l0 1.72 l-10.6 0 l0 -14.36 l10.46 0 l0 1.72 l-8.52 0 l0 4.4 l7.86 0 l0 1.72 l-7.86 0 l0 4.8 l8.66 0 z M220.136 5.640000000000001 l0 12.64 l7.28 0 l0 1.72 l-9.22 0 l0 -14.36 l1.94 0 z M243.908 12.82 c0 -3.38 -1.88 -5.84 -5 -5.84 s-5 2.46 -5 5.84 s1.88 5.84 5 5.84 s5 -2.46 5 -5.84 z M245.908 12.82 c0 3.1 -1.64 7.56 -7 7.56 s-7 -4.46 -7 -7.56 s1.64 -7.56 7 -7.56 s7 4.46 7 7.56 z M253.67999999999998 7.300000000000001 l0 4.98 l3.86 0 c1.74 0 2.92 -0.64 2.92 -2.58 c0 -1.82 -1.24 -2.4 -2.84 -2.4 l-3.94 0 z M253.67999999999998 13.940000000000001 l0 6.06 l-1.94 0 l0 -14.36 l6.46 0 c2.66 0 4.26 1.72 4.26 4.04 c0 2 -1.14 4.26 -4.26 4.26 l-4.52 0 z M279.012 18.28 l0 1.72 l-10.6 0 l0 -14.36 l10.46 0 l0 1.72 l-8.52 0 l0 4.4 l7.86 0 l0 1.72 l-7.86 0 l0 4.8 l8.66 0 z M287.064 13.84 l0 6.16 l-1.94 0 l0 -14.36 l6.64 0 c2.36 0 4.72 0.82 4.72 3.86 c0 2.12 -1.08 2.9 -2 3.44 c0.82 0.34 1.64 0.7 1.72 2.7 l0.12 2.6 c0.02 0.8 0.12 1.1 0.72 1.44 l0 0.32 l-2.38 0 c-0.28 -0.88 -0.34 -3.06 -0.34 -3.6 c0 -1.18 -0.24 -2.56 -2.56 -2.56 l-4.7 0 z M287.064 7.300000000000001 l0 4.88 l4.5 0 c1.42 0 2.92 -0.36 2.92 -2.48 c0 -2.22 -1.62 -2.4 -2.58 -2.4 l-4.84 0 z"
+                  ></path>
+                </g>
+              </svg>
+            </a>
           </div>
           <div class="col text-md-end">
             <a href="https://linkedin.com"
@@ -116,159 +256,173 @@
       </div>
     </footer>
 
-    <!-- 
+    <!-- templates-->
+    <template id="dropDownItemTemplate">
+      <li>
+        <a
+          class="dropdown-item"
+          href="#"
+          onclick="viewFilteredHabits(this)"
+        ></a>
+      </li>
+    </template>
 
+    <template id="habitTemplate">
+      <tr class="my-2">
+        <td data-id="status" class="checkbox px-1 small my-2 fs-4">
+          <i class="bi bi-circle" onclick="checkHabit(this)"></i>
+        </td>
+        <td
+          data-id="name"
+          class="unchecked-item px-1 small my-2"
+          data-bs-toggle="modal"
+          data-bs-target="#editHabit"
+          role="button"
+          onclick="editHabit(this.parentElement)"
+        ></td>
+        <td data-id="category" class="category px-1 small text-center"></td>
+      </tr>
+    </template>
 
-      logo, name, title
-
-      <svg
-        width="257.99999999999994"
-        height="68.63054187192117"
-        viewBox="0 0 406 108"
-        class="css-1j8o68f"
-      >
-        <defs id="SvgjsDefs13344"></defs>
-        <g
-          id="SvgjsG13345"
-          featurekey="MI9fam-0"
-          transform="matrix(0.8706467661691543,0,0,0.8706467661691543,0,15)"
-          fill="#d72323"
-        >
-          <title xmlns="http://www.w3.org/2000/svg">X Symbols-08</title>
-          <g
-            xmlns="http://www.w3.org/2000/svg"
-            id="Page-1"
-            stroke="none"
-            stroke-width="1"
-            fill="none"
-            fill-rule="evenodd"
-          >
-            <g
-              id="Artboard"
-              transform="translate(-2407.000000, -1235.000000)"
-              fill="#d72323"
-              fill-rule="nonzero"
+    <!-- new habit modal -->
+    <div
+      class="modal fade"
+      id="newHabitModal"
+      tabindex="-1"
+      aria-labelledby="newHabitModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="newHabitModalLabel">
+              Add A New Habit
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="habit-name" class="col-form-label">Habit:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Habit"
+                  id="habitName"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="category" class="col-form-label">Category:</label>
+                <input
+                  type="text"
+                  placeholder="Category"
+                  class="form-control"
+                  id="category"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
             >
-              <g
-                id="X-Symbols-08"
-                transform="translate(2407.000000, 1235.000000)"
-              >
-                <path
-                  d="M22.3221884,0 L0,22.3561644 L18.6838906,41.0958904 L25.2765957,34.5205479 L13.1306991,22.3561644 L22.3221884,13.1506849 L54.1367781,44.9863014 L48.9665653,50.1643836 L55.5319149,56.739726 L67.2948328,45.0136986 L22.3221884,0 Z M71.2887538,48.9315068 L64.6960486,55.4794521 L76.8693009,67.6712329 L67.6778116,76.8493151 L35.8632219,44.9863014 L41.0334347,39.8082192 L34.4680851,33.2328767 L22.7051672,44.9315068 L22.7325228,44.9863014 L67.6778116,90 L90,67.6438356 L71.2887538,48.9315068 Z M22.3221884,76.8493151 L13.1306991,67.6438356 L25.2765957,55.4794521 L18.7386018,48.8767123 L0,67.6438356 L22.3221884,90 L41.0334347,71.260274 L34.4680851,64.6849315 L22.3221884,76.8493151 Z M90,22.3561644 L67.6778116,0 L48.993921,18.739726 L55.5319149,25.3150685 L67.6778116,13.1506849 L76.8693009,22.3561644 L64.7507599,34.4931507 L71.2887538,41.0684932 L71.2887538,41.0958904 L90,22.3561644 Z"
-                  id="Shape"
-                ></path>
-              </g>
-            </g>
-          </g>
-        </g>
-        <g
-          id="SvgjsG13346"
-          featurekey="textGroupContainer"
-          transform="matrix(1,0,0,1,405,0)"
-          fill="#d72323"
-        >
-          <rect
-            xmlns="http://www.w3.org/2000/svg"
-            y="0"
-            height="1"
-            width="1"
-            opacity="0"
-          ></rect>
-          <rect
-            xmlns="http://www.w3.org/2000/svg"
-            y="0"
-            x="-307"
-            width="5"
-            height="108"
-          ></rect>
-        </g>
-        <g
-          id="SvgjsG13347"
-          featurekey="nameFeature-0"
-          transform="matrix(1.8177312558256011,0,0,1.8177312558256011,113.92778574429032,13.076176257454254)"
-          fill="#d72323"
-        >
-          <path
-            d="M4.14 10.58 l0 2.92 l2.8 0 c0.92 0 1.46 -0.54 1.46 -1.46 s-0.54 -1.46 -1.46 -1.46 l-2.8 0 z M8.68 15.48 c0.56 0.76 1.12 1.52 1.7 2.26 c0.56 0.74 1.12 1.5 1.68 2.26 l-3.66 0 c-0.72 -0.96 -1.42 -1.92 -2.12 -2.88 c-0.7 -0.94 -1.42 -1.9 -2.14 -2.86 l0 5.74 l-3 0 l0 -12.24 l5.8 0 c2.28 0 4.22 1.74 4.22 4.04 c0 1.62 -1 3.04 -2.48 3.68 z M13.32 7.76 l9.1 0 l0 2.78 l-6.1 0 l0 1.96 l4.9 0 l0 2.78 l-4.9 0 l0 1.94 l6.1 0 l0 2.78 l-9.1 0 l0 -12.24 z M28.880000000000003 16.32 l-2.5 3.68 l-3.5 0 l4.26 -6.26 l-4.06 -5.98 l3.5 0 l2.3 3.4 l2.3 -3.4 l3.5 0 l-4.04 5.98 l4.24 6.26 l-3.5 0 z M49.42 17.22 l0 2.78 l-9.1 0 l0 -12.24 l3 0 l0 9.46 l6.1 0 z M58.379999999999995 7.76 l3 0 l0 7.24 c0 3.18 -2.28 5.1 -5.3 5.1 c-3.1 0 -5.3 -2.04 -5.3 -5.1 l0 -7.24 l3 0 l0 7.24 c0 1.44 0.86 2.32 2.3 2.32 c1.48 0 2.3 -0.86 2.3 -2.32 l0 -7.24 z M71.28 7.76 l3 0 l0 12.24 l-3 0 l-4.8 -7.16 l0 7.16 l-3 0 l0 -12.24 l3 0 l4.8 7.16 l0 -7.16 z M80.88 20 l-4.3 0 l0 -12.24 l4.3 0 c3.74 0 6.3 2.44 6.3 6.12 c0 3.78 -2.7 6.12 -6.3 6.12 z M79.58 10.54 l0 6.68 l1.3 0 c2.12 0 3.3 -1.34 3.3 -3.34 c0 -0.46 -0.06 -0.88 -0.18 -1.3 c-0.52 -1.46 -1.66 -2.04 -3.12 -2.04 l-1.3 0 z M88.44000000000001 19.7 l0 -2.82 c0.24 0.06 0.54 0.12 0.88 0.16 c0.34 0.06 0.7 0.1 1.08 0.12 s0.76 0.04 1.16 0.06 s0.78 0.04 1.12 0.04 c0.94 0 1.6 -0.06 2 -0.16 c0.38 -0.1 0.58 -0.28 0.58 -0.56 c0 -0.24 -0.18 -0.42 -0.36 -0.56 c-0.66 -0.44 -1.44 -0.62 -2.22 -0.8 c-2.2 -0.44 -4.22 -1.32 -4.22 -3.84 c0 -2.98 2.82 -3.68 5.24 -3.68 c1.34 0 2.7 0.14 4 0.46 l0 2.82 c-0.2 -0.06 -0.46 -0.1 -0.78 -0.16 c-0.34 -0.04 -0.68 -0.08 -1.06 -0.12 c-0.78 -0.08 -1.52 -0.12 -2.3 -0.12 c-0.44 0 -1.36 0 -1.78 0.16 c-0.28 0.1 -0.46 0.22 -0.46 0.54 c0 0.16 0.04 0.3 0.12 0.42 c0.08 0.14 0.22 0.24 0.4 0.34 c0.54 0.3 1.24 0.48 1.84 0.62 c0.5 0.12 1 0.26 1.52 0.4 c1.76 0.48 2.92 1.46 2.92 3.34 c0 3.1 -3.08 3.76 -5.56 3.76 c-1.36 0 -2.78 -0.1 -4.12 -0.42 z M99.06 7.76 l10.2 0 l0 2.78 l-3.6 0 l0 9.46 l-3 0 l0 -9.46 l-3.6 0 l0 -2.78 z M113.82000000000001 10.58 l0 2.92 l2.8 0 c0.92 0 1.46 -0.54 1.46 -1.46 s-0.54 -1.46 -1.46 -1.46 l-2.8 0 z M118.36000000000001 15.48 c0.56 0.76 1.12 1.52 1.7 2.26 c0.56 0.74 1.12 1.5 1.68 2.26 l-3.66 0 c-0.72 -0.96 -1.42 -1.92 -2.12 -2.88 c-0.7 -0.94 -1.42 -1.9 -2.14 -2.86 l0 5.74 l-3 0 l0 -12.24 l5.8 0 c2.28 0 4.22 1.74 4.22 4.04 c0 1.62 -1 3.04 -2.48 3.68 z M128.78000000000003 17.32 c2.18 0 3.3 -1.4 3.3 -3.44 c0 -2.16 -1.2 -3.44 -3.3 -3.44 c-2.2 0 -3.3 1.4 -3.3 3.44 c0 2.12 1.22 3.44 3.3 3.44 z M128.78000000000003 20.1 c-3.76 0 -6.3 -2.56 -6.3 -6.22 c0 -3.78 2.66 -6.22 6.3 -6.22 c3.78 0 6.3 2.54 6.3 6.22 c0 3.8 -2.64 6.22 -6.3 6.22 z M139.94 13.26 l0 6.74 l-3 0 l0 -12.24 l3 0 l3.82 6.76 l3.82 -6.76 l3 0 l0 12.24 l-3 0 l0 -6.74 l-2.32 3.98 l-3 0 z"
-          ></path>
-        </g>
-        <g
-          id="SvgjsG13348"
-          featurekey="sloganFeature-0"
-          transform="matrix(0.73400830982708,0,0,0.73400830982708,115.28067149236693,66.13911647231083)"
-          fill="#1b1c63"
-        >
-          <path
-            d="M12 9.84 l-1.82 0 c-0.1 -2.22 -1.94 -2.92 -3.56 -2.92 c-1.22 0 -3.28 0.34 -3.28 2.52 c0 1.22 0.86 1.62 1.7 1.82 l4.1 0.94 c1.86 0.44 3.26 1.56 3.26 3.84 c0 3.4 -3.16 4.34 -5.62 4.34 c-2.66 0 -3.7 -0.8 -4.34 -1.38 c-1.22 -1.1 -1.46 -2.3 -1.46 -3.64 l1.82 0 c0 2.6 2.12 3.36 3.96 3.36 c1.4 0 3.76 -0.36 3.76 -2.42 c0 -1.5 -0.7 -1.98 -3.06 -2.54 l-2.94 -0.68 c-0.94 -0.22 -3.06 -0.88 -3.06 -3.38 c0 -2.24 1.46 -4.44 4.94 -4.44 c5.02 0 5.52 3 5.6 4.58 z M29.451999999999998 12.82 c0 -3.38 -1.88 -5.84 -5 -5.84 s-5 2.46 -5 5.84 s1.88 5.84 5 5.84 s5 -2.46 5 -5.84 z M31.451999999999998 12.82 c0 3.1 -1.64 7.56 -7 7.56 s-7 -4.46 -7 -7.56 s1.64 -7.56 7 -7.56 s7 4.46 7 7.56 z M39.224000000000004 13.48 l0 6.52 l-1.94 0 l0 -14.36 l9.94 0 l0 1.72 l-8 0 l0 4.4 l7.04 0 l0 1.72 l-7.04 0 z M51.39600000000001 7.359999999999999 l0 -1.72 l11.66 0 l0 1.72 l-4.86 0 l0 12.64 l-1.94 0 l0 -12.64 l-4.86 0 z M76.08800000000001 8.1 l-3.32 11.9 l-2.04 0 l-3.74 -14.36 l2.1 0 l2.68 11.68 l0.04 0 l3.22 -11.68 l2.12 0 l3.22 11.68 l0.04 0 l2.68 -11.68 l2.14 0 l-3.78 14.36 l-2.04 0 l-3.28 -11.9 l-0.04 0 z M98.42000000000002 15.82 l-5.76 0 l-1.5 4.18 l-2 0 l5.4 -14.36 l2.2 0 l5.2 14.36 l-2.12 0 z M93.26 14.1 l4.46 0 l-2.12 -6.32 l-0.04 0 z M109.25200000000001 13.84 l0 6.16 l-1.94 0 l0 -14.36 l6.64 0 c2.36 0 4.72 0.82 4.72 3.86 c0 2.12 -1.08 2.9 -2 3.44 c0.82 0.34 1.64 0.7 1.72 2.7 l0.12 2.6 c0.02 0.8 0.12 1.1 0.72 1.44 l0 0.32 l-2.38 0 c-0.28 -0.88 -0.34 -3.06 -0.34 -3.6 c0 -1.18 -0.24 -2.56 -2.56 -2.56 l-4.7 0 z M109.25200000000001 7.300000000000001 l0 4.88 l4.5 0 c1.42 0 2.92 -0.36 2.92 -2.48 c0 -2.22 -1.62 -2.4 -2.58 -2.4 l-4.84 0 z M135.644 18.28 l0 1.72 l-10.6 0 l0 -14.36 l10.46 0 l0 1.72 l-8.52 0 l0 4.4 l7.86 0 l0 1.72 l-7.86 0 l0 4.8 l8.66 0 z M150.508 20 l0 -14.36 l5.82 0 c3.74 0 6.04 2.84 6.04 6.98 c0 3.22 -1.4 7.38 -6.12 7.38 l-5.74 0 z M152.448 7.300000000000001 l0 11.04 l3.76 0 c2.52 0 4.16 -1.98 4.16 -5.6 s-1.66 -5.44 -4.3 -5.44 l-3.62 0 z M178.98 18.28 l0 1.72 l-10.6 0 l0 -14.36 l10.46 0 l0 1.72 l-8.52 0 l0 4.4 l7.86 0 l0 1.72 l-7.86 0 l0 4.8 l8.66 0 z M190.03199999999998 17.88 l4.06 -12.24 l2.18 0 l-5.24 14.36 l-2.06 0 l-5.24 -14.36 l2.16 0 l4.1 12.24 l0.04 0 z M212.32399999999998 18.28 l0 1.72 l-10.6 0 l0 -14.36 l10.46 0 l0 1.72 l-8.52 0 l0 4.4 l7.86 0 l0 1.72 l-7.86 0 l0 4.8 l8.66 0 z M220.136 5.640000000000001 l0 12.64 l7.28 0 l0 1.72 l-9.22 0 l0 -14.36 l1.94 0 z M243.908 12.82 c0 -3.38 -1.88 -5.84 -5 -5.84 s-5 2.46 -5 5.84 s1.88 5.84 5 5.84 s5 -2.46 5 -5.84 z M245.908 12.82 c0 3.1 -1.64 7.56 -7 7.56 s-7 -4.46 -7 -7.56 s1.64 -7.56 7 -7.56 s7 4.46 7 7.56 z M253.67999999999998 7.300000000000001 l0 4.98 l3.86 0 c1.74 0 2.92 -0.64 2.92 -2.58 c0 -1.82 -1.24 -2.4 -2.84 -2.4 l-3.94 0 z M253.67999999999998 13.940000000000001 l0 6.06 l-1.94 0 l0 -14.36 l6.46 0 c2.66 0 4.26 1.72 4.26 4.04 c0 2 -1.14 4.26 -4.26 4.26 l-4.52 0 z M279.012 18.28 l0 1.72 l-10.6 0 l0 -14.36 l10.46 0 l0 1.72 l-8.52 0 l0 4.4 l7.86 0 l0 1.72 l-7.86 0 l0 4.8 l8.66 0 z M287.064 13.84 l0 6.16 l-1.94 0 l0 -14.36 l6.64 0 c2.36 0 4.72 0.82 4.72 3.86 c0 2.12 -1.08 2.9 -2 3.44 c0.82 0.34 1.64 0.7 1.72 2.7 l0.12 2.6 c0.02 0.8 0.12 1.1 0.72 1.44 l0 0.32 l-2.38 0 c-0.28 -0.88 -0.34 -3.06 -0.34 -3.6 c0 -1.18 -0.24 -2.56 -2.56 -2.56 l-4.7 0 z M287.064 7.300000000000001 l0 4.88 l4.5 0 c1.42 0 2.92 -0.36 2.92 -2.48 c0 -2.22 -1.62 -2.4 -2.58 -2.4 l-4.84 0 z"
-          ></path>
-        </g>
-      </svg>
-      <br /><br /><br />
-
-
-      
-      logo only
-
-
-
-      <svg
-        width="257.99999999999994"
-        height="68.63054187192117"
-        viewBox="0 0 406 108"
-        class="css-1j8o68f"
-      >
-        <defs id="SvgjsDefs13344"></defs>
-        <g
-          id="SvgjsG13345"
-          featurekey="MI9fam-0"
-          transform="matrix(0.8706467661691543,0,0,0.8706467661691543,0,15)"
-          fill="#d72323"
-        >
-          <title xmlns="http://www.w3.org/2000/svg">X Symbols-08</title>
-          <g
-            xmlns="http://www.w3.org/2000/svg"
-            id="Page-1"
-            stroke="none"
-            stroke-width="1"
-            fill="none"
-            fill-rule="evenodd"
-          >
-            <g
-              id="Artboard"
-              transform="translate(-2407.000000, -1235.000000)"
-              fill="#d72323"
-              fill-rule="nonzero"
+              Close
+            </button>
+            <!-- update onclick value -->
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              onclick="saveNewHabit()"
             >
-              <g
-                id="X-Symbols-08"
-                transform="translate(2407.000000, 1235.000000)"
-              >
-                <path
-                  d="M22.3221884,0 L0,22.3561644 L18.6838906,41.0958904 L25.2765957,34.5205479 L13.1306991,22.3561644 L22.3221884,13.1506849 L54.1367781,44.9863014 L48.9665653,50.1643836 L55.5319149,56.739726 L67.2948328,45.0136986 L22.3221884,0 Z M71.2887538,48.9315068 L64.6960486,55.4794521 L76.8693009,67.6712329 L67.6778116,76.8493151 L35.8632219,44.9863014 L41.0334347,39.8082192 L34.4680851,33.2328767 L22.7051672,44.9315068 L22.7325228,44.9863014 L67.6778116,90 L90,67.6438356 L71.2887538,48.9315068 Z M22.3221884,76.8493151 L13.1306991,67.6438356 L25.2765957,55.4794521 L18.7386018,48.8767123 L0,67.6438356 L22.3221884,90 L41.0334347,71.260274 L34.4680851,64.6849315 L22.3221884,76.8493151 Z M90,22.3561644 L67.6778116,0 L48.993921,18.739726 L55.5319149,25.3150685 L67.6778116,13.1506849 L76.8693009,22.3561644 L64.7507599,34.4931507 L71.2887538,41.0684932 L71.2887538,41.0958904 L90,22.3561644 Z"
-                  id="Shape"
-                ></path>
-              </g>
-            </g>
-          </g>
-        </g>
-        <g
-          id="SvgjsG13346"
-          featurekey="textGroupContainer"
-          transform="matrix(1,0,0,1,405,0)"
-          fill="#d72323"
-        >
-          <rect
-            xmlns="http://www.w3.org/2000/svg"
-            y="0"
-            height="1"
-            width="1"
-            opacity="0"
-          ></rect>
-        </g>
-      </svg>
-      <br /><br /><br />
-         
-    -->
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- edit event modal -->
+
+    <div
+      class="modal fade"
+      id="editHabitModal"
+      tabindex="-1"
+      aria-labelledby="editHabitModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="editHabitModalLabel">
+              Edit a Habit
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <input type="hidden" id="editHabitId">
+              <div class="mb-3">
+                <label for="edit-habit-name" class="col-form-label">Habit:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Habit"
+                  id="editHabitName"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="edit-category" class="col-form-label">Category:</label>
+                <input
+                  type="text"
+                  placeholder="Category"
+                  class="form-control"
+                  id="editCategory"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary me-auto"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+              onclick="deleteHabit()"
+            >
+              Delete Habit
+            </button>
+            <!-- update onclick value -->
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              onclick="updateHabit()"
+            >
+              Save Changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Bootstrap -->
     <script
@@ -282,10 +436,5 @@
 
     <!-- App JS -->
     <script src="/js/site.js"></script>
-    <script>
-      document
-        .getElementById("btnSubmit")
-        .addEventListener("click", displayMessage);
-    </script>
   </body>
 </html>

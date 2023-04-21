@@ -10,15 +10,14 @@
   --rex-primary-light: #d7232350;
   --rex-secondary: #1b1c63;
   --rex-secondary-light: #1b1c6350;
-  --rex-highlight: #E6D466;
+  --rex-highlight: #e6d466;
   --rex-dark: #212121;
-  --rex-light: #F8F7ED;
+  --rex-light: #f8f7ed;
   --rex-background: rgba(250, 250, 250, 0.8);
-  --rex-tertiary: #2E539E;
+  --rex-tertiary: #2e539e;
   --rex-tertiary-transparent: #2e539ede;
   --rex-quad: #977838;
   --rex-quad-transparent: #977738de;
-
 
   /* nav bar colors */
   --rex-nav-bg: rgba(33, 33, 33, 0.8);
@@ -35,6 +34,34 @@
   --rex-font-size: 1.2rem;
   --rex-font-weight: 400;
   --rex-line-height: 1.5rem;
+}
+
+.radial-background {
+  background-image: linear-gradient(
+      180deg,
+      #ffbd5909,
+      #ffbd5909 85%
+    ),
+    radial-gradient(
+      ellipse at top left,
+      #0000ff,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at top right,
+      orange,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at center right,
+      yellow,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at center left,
+      green,
+      transparent 50%
+    );
 }
 
 /* Sticky Footer */
@@ -68,14 +95,14 @@ footer {
 }
 
 .social-icons {
-  font-size: 1.5rem;
-  color: var(--rex-light);
+  font-size: 2rem;
+  color: var(--rex-secondary);
   transition: color 0.3s ease;
-  padding-left: .5rem; /*probably not needed*/
+  padding-left: 0.5rem; /*probably not needed*/
 }
 
 .social-icons:hover {
-  color: var(--rex-highlight);
+  color: var(--rex-light);
 }
 
 /*
@@ -89,23 +116,65 @@ Header
 /* checklist for app features*/
 
 .checklist {
-    list-style-type: none;
+  list-style-type: none;
 }
 
-.checklist>li i {
-    color: var(--rex-primary);
-    padding-right: 0.5rem;
+.checklist > li i {
+  color: var(--rex-primary);
+  padding-right: 0.5rem;
 }
 
 .dev-icons {
-    font-size: 3rem;
-    padding-left: .5rem;
+  font-size: 3rem;
+  padding-left: 0.5rem;
 }
 
 #bootstrap-icon {
-    height: 5rem;
+  height: 5rem;
 }
 
 .appLogo {
-    max-width: 400px;
+  max-width: 400px;
+}
+
+.btn-custom {
+  background-color: #ac1c5f;
+  color: white;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.btn-custom:hover {
+  background-color: #ac1c5f;
+  color: white;
+}
+
+.btn-custom:active {
+  background-color: #ac1c5f;
+  color: white;
+}
+
+table,
+th,
+td {
+  border-radius: 10px;
+  color: black;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 1em .75em;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.unchecked-item {
+  background-color: #fb7d1125;
+}
+
+.bi:hover {
+  cursor: pointer;
+}
+
+.category {
+  background-color: #fb7d1125;
 }
