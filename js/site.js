@@ -192,7 +192,7 @@ const editHabit = (habitName) => {
   let habitToEdit = currentHabits.find((habit) => habit.id == habitId);
   console.log(habitToEdit);
   document.getElementById("editHabitId").value = habitToEdit.id;
-  document.getElementById("editHabitName").value = habitToEdit.habit;
+  document.getElementById("editHabitName").value = habitToEdit.name;
   document.getElementById("editCategory").value = habitToEdit.category;
 };
 
@@ -217,6 +217,46 @@ const generateId = (dropDownItem) => {
     ).toString(16)
   );
 };
+
+const updateHabit = () => {
+let habitId = document.getElementById("editHabitId").value;
+
+  // get the form input values
+  let name = document.getElementById("editEventName").value;
+  let city = document.getElementById("editCityName").value;
+  let attendance = parseInt(
+    document.getElementById("editAttendance").value,
+    10
+  );
+  // let state = document.getElementById("editEventState");
+  let dateValue = document.getElementById("editEventDate").value;
+  dateValue = new Date(dateValue + "T00:00");
+
+  let date = dateValue.toLocaleDateString();
+
+  let stateSelect = document.getElementById("editEventState");
+  let stateIndex = stateSelect.selectedIndex;
+  let state = stateSelect.options[stateIndex].text;
+
+  const newEvent = {
+    event: name,
+    city: city,
+    state: state,
+    attendance: attendance,
+    date: date,
+    id: habitId,
+  };
+
+  // get events array
+  let currentEvents = getEventData();
+  // find location of OLD event with this ID
+  for (let i = 0; i < currentEvents.length; i++) {
+    if (currentEvents[i].id == eventId) {
+      // replace that event with newEvent
+      currentEvents[i] = newEvent;
+      break;
+    }
+}
 
 // function displayMessage() {
 //   let msg = document.getElementById("message").value;
